@@ -1,35 +1,951 @@
 <!DOCTYPE html>
-<html>
+2
+<html lang="en">
+3
 <head>
-    <title>Mani Sathish</title>
+4
+<meta charset="UTF-8">
+5
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+6
+<title>Mani Sathish | UAV Systems Engineer</title>
+7
+ 
+8
+oppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+9
+ 
+10
+<style>
+11
+ 
+12
+*{
+13
+margin:0;
+14
+padding:0;
+15
+box-sizing:border-box;
+16
+scroll-behavior:smooth;
+17
+font-family:'Poppins',sans-serif;
+18
+}
+19
+ 
+20
+body{
+21
+background:#0f172a;
+22
+color:white;
+23
+line-height:1.7;
+24
+}
+25
+ 
+26
+nav{
+27
+position:fixed;
+28
+top:0;
+29
+width:100%;
+30
+background:rgba(15,23,42,0.95);
+31
+backdrop-filter:blur(10px);
+32
+padding:15px 8%;
+33
+display:flex;
+34
+justify-content:space-between;
+35
+align-items:center;
+36
+z-index:1000;
+37
+}
+38
+ 
+39
+.logo{
+40
+font-size:24px;
+41
+font-weight:700;
+42
+color:#00d4ff;
+43
+}
+44
+ 
+45
+nav ul{
+46
+display:flex;
+47
+gap:25px;
+48
+list-style:none;
+49
+}
+50
+ 
+51
+nav a{
+52
+color:white;
+53
+text-decoration:none;
+54
+transition:.3s;
+55
+}
+56
+ 
+57
+nav a:hover{
+58
+color:#00d4ff;
+59
+}
+60
+ 
+61
+section{
+62
+padding:100px 8%;
+63
+}
+64
+ 
+65
+.hero{
+66
+min-height:100vh;
+67
+display:flex;
+68
+align-items:center;
+69
+justify-content:center;
+70
+gap:60px;
+71
+flex-wrap:wrap;
+72
+}
+73
+ 
+74
+.hero img{
+75
+width:340px;
+76
+height:340px;
+77
+object-fit:cover;
+78
+border-radius:50%;
+79
+border:5px solid #00d4ff;
+80
+box-shadow:0 0 35px rgba(0,212,255,.5);
+81
+}
+82
+ 
+83
+.hero-text{
+84
+max-width:650px;
+85
+}
+86
+ 
+87
+.hero-text h1{
+88
+font-size:60px;
+89
+line-height:1.1;
+90
+margin-bottom:15px;
+91
+}
+92
+ 
+93
+.hero-text h2{
+94
+color:#00d4ff;
+95
+margin-bottom:20px;
+96
+}
+97
+ 
+98
+.hero-text p{
+99
+font-size:18px;
+100
+color:#d1d5db;
+101
+}
+102
+ 
+103
+.btns{
+104
+margin-top:30px;
+105
+display:flex;
+106
+gap:15px;
+107
+flex-wrap:wrap;
+108
+}
+109
+ 
+110
+.btn{
+111
+padding:14px 24px;
+112
+background:#00d4ff;
+113
+color:#000;
+114
+font-weight:600;
+115
+border-radius:8px;
+116
+text-decoration:none;
+117
+}
+118
+ 
+119
+.btn-outline{
+120
+padding:14px 24px;
+121
+border:2px solid #00d4ff;
+122
+color:#00d4ff;
+123
+border-radius:8px;
+124
+text-decoration:none;
+125
+}
+126
+ 
+127
+.title{
+128
+text-align:center;
+129
+font-size:40px;
+130
+margin-bottom:50px;
+131
+color:#00d4ff;
+132
+}
+133
+ 
+134
+.card{
+135
+background:#1e293b;
+136
+padding:25px;
+137
+border-radius:16px;
+138
+margin-bottom:25px;
+139
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+140
+}
+141
+ 
+142
+.skills{
+143
+display:grid;
+144
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+145
+gap:20px;
+146
+}
+147
+ 
+148
+.skill-card{
+149
+background:#1e293b;
+150
+padding:25px;
+151
+border-radius:15px;
+152
+}
+153
+ 
+154
+.skill-card h3{
+155
+margin-bottom:15px;
+156
+color:#00d4ff;
+157
+}
+158
+ 
+159
+.skill-card ul{
+160
+padding-left:20px;
+161
+}
+162
+ 
+163
+.project-grid{
+164
+display:grid;
+165
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+166
+gap:20px;
+167
+}
+168
+ 
+169
+.project{
+170
+background:#1e293b;
+171
+padding:25px;
+172
+border-radius:15px;
+173
+}
+174
+ 
+175
+.contact{
+176
+text-align:center;
+177
+}
+178
+ 
+179
+.contact p{
+180
+margin:10px 0;
+181
+}
+182
+ 
+183
+footer{
+184
+text-align:center;
+185
+padding:30px;
+186
+background:#020617;
+187
+}
+188
+ 
+189
+.banner{
+190
+width:100%;
+191
+border-radius:20px;
+192
+margin-top:25px;
+193
+}
+194
+ 
+195
+@media(max-width:900px){
+196
+ 
+197
+.hero-text h1{
+198
+font-size:42px;
+199
+}
+200
+ 
+201
+.hero img{
+202
+width:260px;
+203
+height:260px;
+204
+}
+205
+ 
+206
+nav ul{
+207
+display:none;
+208
+}
+209
+ 
+210
+}
+211
+ 
+212
+</style>
+213
 </head>
+214
 <body>
-    <h1>Mani Sathish</h1>
-    <h2>Hardware Engineer</h2>
-
-    <p>Welcome to my portfolio website.</p>
-
-    <h3>About Me</h3>
-    <p>
-        I am a Hardware Engineer based in Abu Dhabi with experience in
-        UAV systems, avionics, sensor integration, and drone technologies.
-    </p>
-
-    <h3>Skills</h3>
-    <ul>
-        <li>Drone Systems</li>
-        <li>Avionics Integration</li>
-        <li>RTK GPS</li>
-        <li>Mission Planner</li>
-        <li>Hardware Testing</li>
-    </ul>
-
-    <h3>Projects</h3>
-    <p>Drone Surveillance System</p>
-    <p>Agricultural Mapping Drone</p>
-
-    <h3>Contact</h3>
-    <p>Email: Manisathish119@gmail.com</p>
-
+215
+ 
+216
+<nav>
+217
+<div class="logo">Mani Sathish</div>
+218
+ 
+219
+<ul>
+220
+<li>">About</a></li>
+221
+<li>#experienceExperience</a></li>
+222
+<li>#skills></li>
+223
+<li>#projects</li>
+224
+<li>#contact</li>
+225
+</ul>
+226
+</nav>
+227
+ 
+228
+<section class="hero">
+229
+ 
+230
+profile.jpg
+231
+ 
+232
+<div class="hero-text">
+233
+ 
+234
+<h1>Mani Sathish</h1>
+235
+ 
+236
+<h2>UAV Systems Engineer | Avionics Integration Specialist</h2>
+237
+ 
+238
+<p>
+239
+Experienced UAV/UAS Engineer with 9+ years of expertise in drone
+240
+integration, avionics systems, flight testing, mission planning,
+241
+autonomous operations, electrical design, and hardware validation.
+242
+Specialized in VTOL, Fixed Wing, FPV, and Heavy Lift UAV platforms.
+243
+</p>
+244
+ 
+245
+<div class="btns">
+246
+<a class="btn"V.pdf
+247
+ 
+248
+<a classContact Me</a>
+249
+</div>
+250
+ 
+251
+</div>
+252
+ 
+253
+</section>
+254
+ 
+255
+<section id="about">
+256
+ 
+257
+<h2 class="title">About Me</h2>
+258
+ 
+259
+<div class="card">
+260
+ 
+261
+<p>
+262
+I am a UAE-based UAV Systems Engineer passionate about developing,
+263
+integrating, and testing advanced drone technologies. Throughout my
+264
+career I have worked on UAV systems ranging from compact FPV drones to
+265
+150kg heavy-lift autonomous platforms.
+266
+</p>
+267
+ 
+268
+<br>
+269
+ 
+270
+<p>
+271
+My expertise covers avionics integration, mission planning, autonomous
+272
+flight operations, hardware testing, firmware validation, payload
+273
+integration, electrical architecture, and end-user training.
+274
+</p>
+275
+ 
+276
+</div>
+277
+ 
+278
+uav-expo.jpgbanner">
+279
+ 
+280
+</section>
+281
+ 
+282
+<section id="experience">
+283
+ 
+284
+<h2 class="title">Professional Experience</h2>
+285
+ 
+286
+<div class="card">
+287
+<h3>UAV / Drone Integration & Testing Engineer</h3>
+288
+<p>Sanad Academy & Streit Security Vehicles (SKYSTREAM)</p>
+289
+<p>2022 - 2026</p>
+290
+</div>
+291
+ 
+292
+<div class="card">
+293
+<h3>Electrical Design Engineer</h3>
+294
+<p>HCL Technologies - Applied Materials</p>
+295
+<p>2022</p>
+296
+</div>
+297
+ 
+298
+<div class="card">
+299
+<h3>Integration Engineer</h3>
+300
+<p>Tata Advanced Systems Ltd</p>
+301
+<p>2019 - 2022</p>
+302
+</div>
+303
+ 
+304
+<div class="card">
+305
+<h3>Assistant Engineer - Wire Harness</h3>
+306
+<p>Rossell Techsys</p>
+307
+<p>2018 - 2019</p>
+308
+</div>
+309
+ 
+310
+<div class="card">
+311
+<h3>Senior Technician - PCB Assembly</h3>
+312
+<p>Centum Electronics</p>
+313
+<p>2016 - 2018</p>
+314
+</div>
+315
+ 
+316
+</section>
+317
+ 
+318
+<section id="skills">
+319
+ 
+320
+<h2 class="title">Technical Skills</h2>
+321
+ 
+322
+<div class="skills">
+323
+ 
+324
+<div class="skill-card">
+325
+<h3>UAV Platforms</h3>
+326
+ 
+327
+<ul>
+328
+<li>VTOL UAV</li>
+329
+<li>Fixed Wing UAV</li>
+330
+<li>FPV Systems</li>
+331
+<li>Heavy Lift UAV</li>
+332
+<li>Mission Planning</li>
+333
+<li>Flight Testing</li>
+334
+</ul>
+335
+ 
+336
+</div>
+337
+ 
+338
+<div class="skill-card">
+339
+<h3>Avionics</h3>
+340
+ 
+341
+<ul>
+342
+<li>Pixhawk</li>
+343
+<li>CUAV</li>
+344
+<li>NORA</li>
+345
+<li>Telemetry Systems</li>
+346
+<li>Payload Integration</li>
+347
+<li>Power Systems</li>
+348
+</ul>
+349
+ 
+350
+</div>
+351
+ 
+352
+<div class="skill-card">
+353
+<h3>Software</h3>
+354
+ 
+355
+<ul>
+356
+<li>ArduPilot</li>
+357
+<li>PX4</li>
+358
+<li>Betaflight</li>
+359
+<li>Mission Planner</li>
+360
+<li>AutoCAD</li>
+361
+<li>SolidWorks</li>
+362
+</ul>
+363
+ 
+364
+</div>
+365
+ 
+366
+<div class="skill-card">
+367
+<h3>Engineering</h3>
+368
+ 
+369
+<ul>
+370
+<li>System Integration</li>
+371
+<li>Functional Testing</li>
+372
+<li>Flight Analysis</li>
+373
+<li>Harness Design</li>
+374
+<li>Electrical Schematics</li>
+375
+<li>Troubleshooting</li>
+376
+</ul>
+377
+ 
+378
+</div>
+379
+ 
+380
+</div>
+381
+ 
+382
+</section>
+383
+ 
+384
+<section id="projects">
+385
+ 
+386
+<h2 class="title">Key Projects</h2>
+387
+ 
+388
+<div class="project-grid">
+389
+ 
+390
+<div class="project">
+391
+<h3>Heavy Lift UAV Systems</h3>
+392
+<p>
+393
+Integrated and tested 90kg and 150kg heavy-lift drone platforms for
+394
+surveillance and endurance operations.
+395
+</p>
+396
+</div>
+397
+ 
+398
+<div class="project">
+399
+<h3>VTOL Platforms</h3>
+400
+<p>
+401
+Worked on 20kg to 50kg VTOL aircraft supporting long-range autonomous
+402
+missions and payload operations.
+403
+</p>
+404
+</div>
+405
+ 
+406
+<div class="project">
+407
+<h3>FPV Systems</h3>
+408
+<p>
+409
+Implemented FPV and telemetry integration for tactical and real-time
+410
+video transmission platforms.
+411
+</p>
+412
+</div>
+413
+ 
+414
+<div class="project">
+415
+<h3>Fixed Wing UAV</h3>
+416
+<p>
+417
+Integrated avionics, navigation systems, telemetry, and gimbal payloads
+418
+for surveillance missions.
+419
+</p>
+420
+</div>
+421
+ 
+422
+<div class="project">
+423
+<h3>Ground Control Station</h3>
+424
+<p>
+425
+Engineered complete UAV electrical architecture and power systems for
+426
+ground control operations.
+427
+</p>
+428
+</div>
+429
+ 
+430
+<div class="project">
+431
+<h3>Guinness World Record Drone Show</h3>
+432
+<p>
+433
+Contributed to Air Glow drone show projects achieving Guinness World
+434
+Record recognition.
+435
+</p>
+436
+</div>
+437
+ 
+438
+</div>
+439
+ 
+440
+</section>
+441
+ 
+442
+<section>
+443
+ 
+444
+<h2 class="title">Certifications</h2>
+445
+ 
+446
+<div class="card">
+447
+IPC J-STD-001 Expert • IPC 610-G Expert • IPC 620-C Expert • ISRO PAX 300 Expert • Mission Planner Expert
+448
+</div>
+449
+ 
+450
+</section>
+451
+ 
+452
+<section id="contact">
+453
+ 
+454
+<h2 class="title">Contact</h2>
+455
+ 
+456
+<div class="contact">
+457
+ 
+458
+<p>📍 Abu Dhabi / Ras Al Khaimah, UAE</p>
+459
+ 
+460
+<p>📧 Manisathish119@gmail.com</p>
+461
+ 
+462
+<p>📱 +971 527441548</p>
+463
+ 
+464
+<p>
+465
+<a style="color:#00d4ff;"
+466
+href="https://www.linkedin.com/in/mani-sathish-79413a147/"
+467
+target="_ion>
+468
+ 
+469
+<footer>
+470
+ 
+471
+<p>© 2026 Mani Sathish | UAV Systems Engineer</p>
+472
+ 
+473
+</footer>
+474
+ 
+475
 </body>
+476
 </html>
